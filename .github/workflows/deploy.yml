@@ -8,6 +8,11 @@ jobs:
   deploy: 
     runs-on: ubuntu-latest
     steps:
+      - name: Install Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '13.x'
+
       - name: Deploy NodeJS App
         uses: appleboy/ssh-action@v0.1.2
         with:
@@ -19,7 +24,7 @@ jobs:
             cd ~/projects/node-express-digital-ocean-example
             # rm -Rf node-express-digital-ocean-example
             # git clone git@github.com:alextomas80/node-express-digital-ocean-example.git node-express-digital-ocean-example
-            # npm install
+            npm install
             git pull origin master
             echo "Deployment successful to Digital Ocean"
 
