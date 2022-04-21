@@ -24,6 +24,7 @@ jobs:
             cd ~/projects
             rm -Rf node-express-digital-ocean-example
             git clone git@github.com:alextomas80/node-express-digital-ocean-example.git node-express-digital-ocean-example
+            cd node-express-digital-ocean-example
             npm install
             # git pull origin master
             pm2 restart alex-app
